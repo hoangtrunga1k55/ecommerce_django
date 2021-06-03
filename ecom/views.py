@@ -15,8 +15,6 @@ def home_view(request):
         product_count_in_cart=len(set(counter))
     else:
         product_count_in_cart=0
-    if request.user.is_authenticated:
-        return HttpResponseRedirect('afterlogin')
     return render(request,'ecom/index.html',{'products':products,'product_count_in_cart':product_count_in_cart})
 
 
@@ -380,9 +378,9 @@ def customer_address_view(request):
                         total=total+p.price
 
             response = render(request, 'ecom/payment.html',{'total':total})
-            response.set_cookie('email',email)
-            response.set_cookie('mobile',mobile)
-            response.set_cookie('address',address)
+            response.set_cookie('email',request.POST.get('email'))
+            response.set_cookie('mobile',request.POST.get('mobile'))
+            response.set_cookie('address',request.POST.get('address'))
             return response
     return render(request,'ecom/customer_address.html',{'addressForm':addressForm,'product_in_cart':product_in_cart,'product_count_in_cart':product_count_in_cart})
 
