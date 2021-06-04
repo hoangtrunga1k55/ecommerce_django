@@ -6,7 +6,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>LazyCoder || sumit</title>
+  <title>T-shop</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
@@ -99,13 +99,13 @@
   	height: 100px;
   }
   .form-style-1 input[type=submit], .form-style-1 input[type=button]{
-  	background: #4B99AD;
+  	background: #edeef1;
   	padding: 8px 15px 8px 15px;
   	border: none;
   	color: #fff;
   }
   .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
-  	background: #4691A4;
+  	background: #edeef1;
   	box-shadow:none;
   	-moz-box-shadow:none;
   	-webkit-box-shadow:none;
@@ -117,7 +117,7 @@
 
 </head>
 
-<body style="background-color: #B3E5FC;">
+<body style="background-color: #edeef1;">
 
   {%if request.user.is_authenticated%}
     {% include "ecom/customer_navbar.html" %}
@@ -126,9 +126,7 @@
   {%endif%}
 
   <center>
-    <h3 class='alert alert-success'>Gửi chúng tôi phản hồi của bạn !</h3>
-
-
+    <h3 class='alert alert-success' style="background: #77877a;">Gửi chúng tôi phản hồi của bạn !</h3>
     <form method="post">
       {% csrf_token %}
     <ul class="form-style-1">
@@ -144,19 +142,10 @@
 
         </li>
         <li>
-            <input type="submit" value="Gửi phản hồi" />
+          <button class="btn btn-primary">Gửi phản hồi</button>
         </li>
     </ul>
     </form>
-
-
   </center>
-  {% include "ecom/footer.html" %}
 </body>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
-
 </html>
