@@ -2,63 +2,44 @@
 {% load static %}
 {% block content %}
 
-
-<head>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-  <style media="screen">
-    a:link {
-      text-decoration: none;
-    }
-
-    h6 {
-      text-align: center;
-    }
-
-    .row {
-      margin: 100px;
-    }
-  </style>
-</head>
-<!--
-written By : sumit kumar
-facebook : fb.com/sumit.luv
--->
-<div class="container">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h6 class="panel-title">Danh sách đặt hàng</h6>
-    </div>
-    <table class="table table-hover" id="dev-table">
-      <thead>
-        <tr>
-          <th>Tên</th>
-          <th>Hình ảnh</th>
-          <th>Số điện thoại</th>
-          <th>Địa chỉ</th>
-          <th>Sửa</th>
-          <th>Xóa</th>
-        </tr>
-      </thead>
-      {% for c in customers %}
-      <tr>
-        <td> {{c.get_name}}</td>
-        <td> <img src="{% static c.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-        <td>{{c.mobile}}</td>
-        <td>{{c.address}}</td>
-        <td><a class="btn btn-primary btn-xs" href="{% url 'update-customer' c.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
-        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-customer' c.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
-
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
+<div class="panel-heading">
+  <h1 class="panel-title text-center" style="font-weight: 600;">Danh sách đặt hàng</h6>
 </div>
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrapr" id="dev-table">
+              <thead>
+                <tr>
+                  <th>Tên</th>
+                  <th>Hình ảnh</th>
+                  <th>Số điện thoại</th>
+                  <th>Địa chỉ</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+              </thead>
+              {% for c in customers %}
+              <tr>
+                <td> {{c.get_name}}</td>
+                <td> <img src="{% static c.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                <td>{{c.mobile}}</td>
+                <td>{{c.address}}</td>
+                <td><a class="btn btn-primary btn-xs" href="{% url 'update-customer' c.id  %}"><i class="fa fa-edit"></i></a>
+                </td>
+                <td><a class="btn btn-danger btn-xs" href="{% url 'delete-customer' c.id  %}"><i class="fa fa-trash"></i></a></td>
+
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock content %}

@@ -6,7 +6,7 @@
   @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 body {
-    background-color: #8C9EFF;
+    background-color: #edeef1;
     font-family: 'Open Sans', serif
 }
 
@@ -186,7 +186,7 @@ p {
                 </li>
                 <li class="col-md-4">
                     <div class="col"> <strong>Trạng thái:</strong> <br> {{order.status}} </div> <br>
-                    <h4><a style="text-decoration:none; color:blue;" href="{% url 'download-invoice' order.id product.id  %}" >Download Invoice</a></h4>
+                    <!-- <h4><a style="text-decoration:none; color:blue;" href="{% url 'download-invoice' order.id product.id  %}" >Download Invoice</a></h4> -->
                 </li>
                 {%endfor%}
             </ul>

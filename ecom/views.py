@@ -6,6 +6,8 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib import messages
 from django.conf import settings
+def test(request):
+    return render(request,'ecom/test.html')
 
 def home_view(request):
     products=models.Product.objects.all()
@@ -29,6 +31,7 @@ def customer_signup_view(request):
     userForm=forms.CustomerUserForm()
     customerForm=forms.CustomerForm()
     mydict={'userForm':userForm,'customerForm':customerForm}
+    print(request.POST)
     if request.method=='POST':
         userForm=forms.CustomerUserForm(request.POST)
         customerForm=forms.CustomerForm(request.POST,request.FILES)
@@ -246,7 +249,7 @@ def add_to_cart_view(request,pk):
         response.set_cookie('product_ids', pk)
 
     product=models.Product.objects.get(id=pk)
-    messages.info(request, product.name + ' added to cart successfully!')
+    # messages.info(request, product.name + ' added to cart successfully!')
 
     return response
 
@@ -377,16 +380,12 @@ def customer_address_view(request):
                     for p in products:
                         total=total+p.price
 
-            response = render(request, 'ecom/payment.html',{'total':total})
-            response.set_cookie('email',request.POST.get('email'))
-            response.set_cookie('mobile',request.POST.get('mobile'))
-            response.set_cookie('address',request.POST.get('address'))
+            response = redirect('/payment-success')
+            response.set_cookie('email',email)
+            response.set_cookie('mobile',mobile)
+            response.set_cookie('address',address)
             return response
     return render(request,'ecom/customer_address.html',{'addressForm':addressForm,'product_in_cart':product_in_cart,'product_count_in_cart':product_count_in_cart})
-
-
-
-
 # here we are just directing to this view...actually we have to check whther payment is successful or not
 #then only this view should be accessed
 @login_required(login_url='customerlogin')

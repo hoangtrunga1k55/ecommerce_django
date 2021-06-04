@@ -5,7 +5,7 @@
     <title></title>
 
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"> -->
   <!-- jQuery library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -90,7 +90,6 @@
       display: inline-block;
       color: #fff;
       line-height: 12px;
-      margin-left: 10px
   }
 
   .upper-links {
@@ -199,9 +198,8 @@
   <body>
     <div id="navbar">
         <div class="container">
-            <div class="row row1">
+            <div class="row row1" style="justify-content: flex-end;">
                 <ul class="largenav pull-right">
-
                     <li class="upper-links"><a class="links" href="/my-order">Đặt hàng</a></li>
                     <li class="upper-links"><a class="links" href="/my-profile">Trang cá nhân</a></li>
                       <li class="upper-links"><a class="links" href="/logout">Đăng xuất</a></li>
@@ -218,11 +216,9 @@
                 <div class="col-sm-2">
                     <h2 style="margin:0px;"><a style="text-decoration:none; color:white;" href="/"><span class="largenav">Tshop </span></a></h2>
                 </div>
-
-
                 <div class="navbar-search smallsearch col-sm-8 col-xs-11">
                   <form  action="/search" method="get">
-                    <div class="row"> <input class="navbar-input col-xs-11" type="search" placeholder="Tìm kiếm sản phầm, thương hiệu..." name="query" id="query">
+                    <div class="row"> <input class="navbar-input col-xs-11" type="search" placeholder="Tìm kiếm sản phầm, thương hiệu..." name="query" id="query" style="width: 90%;">
                       <button class="navbar-button col-xs-1" type="submit">
                         <svg width="15px" height="15px">
                                 <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
