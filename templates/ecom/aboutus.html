@@ -5,24 +5,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>LazyCoder || sumit</title>
+  <title>T-shop</title>
 
-  <title>sumit</title>
-  <style media="screen">
-    .footer{
-      position: fixed;
-    }
-  </style>
+  <title>T-shop</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet"
+      href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{% static 'plugins/jqvmap/jqvmap.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}" />
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.css' %}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body style="background-color: #B3E5FC;">
+<body style="background-color: #edeef1;">
   {%if request.user.is_authenticated%}
     {% include "ecom/customer_navbar.html" %}
   {%else%}
     {% include "ecom/navbar.html" %}
   {%endif%}
   <br><br><br>
-<h3 style="text-align:center;">“I don’t create companies for the sake of creating companies, but to get things done.” </h3>
+<h3 style="text-align:center;">“Nhóm 9 thương mại điện tử” </h3>
+<br>
+<p>Hoàng Quốc Trung</p>
+<p>Nguyễn Văn Long</p>
+<p>Đào Xuân Trường</p>
+<p>Vương Quốc Thịnh</p>
+<p>Phạm Ngọc Minh</p>
+<p>Vũ Minh Đức</p>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   {% include "ecom/footer.html" %}
 </body>
